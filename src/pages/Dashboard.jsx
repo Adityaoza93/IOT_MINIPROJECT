@@ -1,5 +1,13 @@
+import LineChart from "./LineChart";
+
 const Dashboard = () => {
-  return <div className="title"> Dashboard</div>;
+  return (
+  
+  <section>
+    <h1>Graph</h1>
+    <LineChart/>
+  </section>
+  );
 };
 
 export default Dashboard;

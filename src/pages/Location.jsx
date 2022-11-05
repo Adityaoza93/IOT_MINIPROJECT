@@ -11,7 +11,7 @@ export default function Location() {
 }
 
 function Map() {
-  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  const center = useMemo(() => ({ lat: 19.075983, lng: 72.877655 }), []);
 
   return (
     
