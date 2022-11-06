@@ -1,12 +1,27 @@
 import LineChart from "./LineChart";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const Dashboard = () => {
   return (
-  
-  <section>
-    <h1>Graph</h1>
-    <LineChart/>
-  </section>
+    <Container>
+      <Row>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+      </Row>
+      <Row>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+      </Row>
+      <Row>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+        <Col><LineChart/></Col>
+      </Row>
+    </Container>
   );
 };
 
