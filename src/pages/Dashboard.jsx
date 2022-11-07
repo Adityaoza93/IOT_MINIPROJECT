@@ -5,7 +5,7 @@ import fireDb from "../firebase"
 
 export default function Dashboard() {
 
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
   // const [dataArr, setDataArr] = useState([]);
   const [co2arr, setco2arr] = useState([]);
   const [dustarr, setdustarr] = useState([]);
@@ -20,11 +20,13 @@ export default function Dashboard() {
   const [temparr, settemparr] = useState([]);
   const [vocarr, setvocarr] = useState([]);
   const [newdt, setnewdt] = useState([]);
+
+
   useEffect(() => {
     fireDb.child("Todo").on("value", (snapshot) => {
       const Tododata = snapshot.val();
       if (Tododata !== null){
-        setData({...Tododata})
+        // setData({...Tododata})
         // console.log(Tododata)
         Object.entries(Tododata).forEach(element => {
           setco2arr(co2arr => [...co2arr, element[1].co2])
@@ -33,8 +35,8 @@ export default function Dashboard() {
           setetharr(etharr => [...etharr, element[1].eth])
           seth2arr(h2arr => [...h2arr, element[1].h2])
           sethumarr(humarr => [...humarr, element[1].hum])
-          setlatarr(latarr)
-          setlonarr(lonarr)
+          // setlatarr(latarr)
+          // setlonarr(lonarr)
           setmq135arr(mq135arr => [...mq135arr, element[1].mq135])
           seto3arr(o3arr => [...o3arr, element[1].o3])
           settemparr(temparr => [...temparr, element[1].temp])
@@ -71,24 +73,25 @@ export default function Dashboard() {
         setepocharr(newdt)
       }else
       {
-            setData({})
-            setco2arr([])
-            setdustarr([])
-            setepocharr([])
-            setetharr([])
-            seth2arr([])
-            sethumarr([])
-            setlatarr("")
-            setlonarr("")
-            setmq135arr([])
-            seto3arr([])
-            settemparr([])
-            setvocarr([])
+            // setData({})
+            // setco2arr([])
+            // setdustarr([])
+            // setepocharr([])
+            // setetharr([])
+            // seth2arr([])
+            // sethumarr([])
+            // setlatarr("")
+            // setlonarr("")
+            // setmq135arr([])
+            // seto3arr([])
+            // settemparr([])
+            // setvocarr([])
+            console.log("Error Encountered!")
       }
     });
 
     return () => {
-      setData({});
+      // setData({});
     }
 
   }, []);
@@ -190,7 +193,7 @@ export default function Dashboard() {
     xAxis: {
       categories: epocharr
     },
-    colors: ['#FB8833', '#17A8F5'],
+    colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
@@ -208,7 +211,7 @@ export default function Dashboard() {
     xAxis: {
       categories: epocharr
     },
-    colors: ['#FB8833', '#17A8F5'],
+    colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
@@ -226,7 +229,7 @@ export default function Dashboard() {
     xAxis: {
       categories: epocharr
     },
-    colors: ['#FB8833', '#17A8F5'],
+    colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
@@ -244,7 +247,7 @@ export default function Dashboard() {
     xAxis: {
       categories: epocharr
     },
-    colors: ['#FB8833', '#17A8F5'],
+    colors: ['#FB8833'  ],
     series: [
       {
         name: 'Sales',
