@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "chart.js": "^3.9.1",
+    "firebase": "^9.13.0",
     "framer-motion": "^6.2.3",
     "gl-matrix": "^3.4.3",
     "google-map-react": "^2.2.0",
