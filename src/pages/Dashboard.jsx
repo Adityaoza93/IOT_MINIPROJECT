@@ -1,28 +1,173 @@
-import LineChart from "./LineChart";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-const Dashboard = () => {
-  return (
-    <Container>
-      <Row>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-      </Row>
-      <Row>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-      </Row>
-      <Row>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-        <Col><LineChart/></Col>
-      </Row>
-    </Container>
-  );
-};
+import React from 'react'
+import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official'
 
-export default Dashboard;
+const LineChartOptions = {
+  title: {
+    text: 'Line chart'
+  },
+  xAxis: {
+    categories: ['January', 'February', 'March', 'April', 'May', 'June']
+  },
+  colors: ['#FB8833', '#17A8F5'],
+  series: [
+    {
+      name: 'Sales',
+      data: [21, 35, 75, 51, 41, 47]
+    },
+    {
+      name: 'Leads',
+      data: [41, 79, 57, 47, 63, 71]
+    }
+  ],
+  credits: {
+    enabled: false
+  }
+}
+
+const BarChartOptions = {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Bar Chart'
+  },
+  xAxis: {
+    categories: ['January', 'February', 'March', 'April', 'May', 'June']
+  },
+  colors: ['#FB8833', '#17A8F5'],
+  series: [
+    {
+      name: 'Sales',
+      data: [21, 35, 75, 51, 41, 47]
+    },
+    {
+      name: 'Leads',
+      data: [41, 79, 57, 47, 63, 71]
+    }
+  ],
+  credits: {
+    enabled: false
+  }
+}
+
+export default function Dashboard() {
+  return (
+    <><div className="row">
+      <div className="col-md-12">
+        <h2>Dashboard</h2>
+      </div>
+
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions} />
+        </div>
+      </div>
+
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions} />
+        </div>
+      </div>
+
+    </div><div className="row">
+        <div className="col-md-12">
+          
+        </div>
+
+        <div className="section col-md-6">
+          <h3 className="section-title">Line Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={LineChartOptions} />
+          </div>
+        </div>
+
+        <div className="section col-md-6">
+          <h3 className="section-title">Line Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={LineChartOptions} />
+          </div>
+        </div>
+
+      </div>
+      <div className="row">
+      <div className="col-md-12">
+        
+      </div>
+      
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions}
+          />
+        </div>
+      </div>
+
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions}
+          />
+        </div>
+      </div>
+
+    </div>
+    <div className="row">
+      <div className="col-md-12">
+        
+      </div>
+      
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions}
+          />
+        </div>
+      </div>
+
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions}
+          />
+        </div>
+      </div>
+
+    </div>
+    <div className="row">
+      <div className="col-md-12">
+        
+      </div>
+      
+      <div className="section col-md-6">
+        <h3 className="section-title">Line Chart</h3>
+        <div className="section-content">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={LineChartOptions}
+          />
+        </div>
+      </div>
+      </div>
+      
+      </>
+  )
+}
