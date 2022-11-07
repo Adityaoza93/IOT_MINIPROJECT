@@ -3,8 +3,6 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import fireDb from "../firebase"
 
-
-
 export default function Dashboard() {
 
   const [data, setData] = useState({});
@@ -21,12 +19,13 @@ export default function Dashboard() {
   const [o3arr, seto3arr] = useState([]);
   const [temparr, settemparr] = useState([]);
   const [vocarr, setvocarr] = useState([]);
+  const [newdt, setnewdt] = useState([]);
   useEffect(() => {
     fireDb.child("Todo").on("value", (snapshot) => {
       const Tododata = snapshot.val();
       if (Tododata !== null){
         setData({...Tododata})
-        console.log(Tododata)
+        // console.log(Tododata)
         Object.entries(Tododata).forEach(element => {
           setco2arr(co2arr => [...co2arr, element[1].co2])
           setdustarr(dustarr => [...dustarr, element[1].dust])
@@ -57,7 +56,19 @@ export default function Dashboard() {
         //   settemparr(temparr => [...temparr, lisobj[1].temp])
         //   setvocarr(vocarr => [...vocarr, lisobj[1].voc])
         // }
-        console.log(epocharr)
+        epocharr.map(Number)
+        epocharr.forEach((element) => {
+          var date = new Date((element + 19800) * 1000)
+          var Hours = date.getHours();
+          var Minutes = "0" + date.getMinutes();
+          var Seconds = "0" + date.getSeconds()
+          var formattedDT = date + "-" + Hours + ":" + Minutes.substr(-2) + ":" + Seconds.substr(-2);
+          setnewdt(newdt => [...newdt, formattedDT])
+        })
+        console.log(newdt)
+        newdt.map(String)
+        setepocharr([])
+        setepocharr(newdt)
       }else
       {
             setData({})
