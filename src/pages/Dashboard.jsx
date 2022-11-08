@@ -33,7 +33,7 @@ export default function Dashboard() {
 
   const co2Line = {
     title: {
-      text: 'Line chart'
+      text: 'CO2 Chart'
     },
     xAxis: {
       categories: data.epoch
@@ -51,7 +51,7 @@ export default function Dashboard() {
   }
   const dustLine = {
     title: {
-      text: 'Line chart'
+      text: 'PM 2.5 Chart'
     },
     xAxis: {
       categories: data.epoch
@@ -69,7 +69,7 @@ export default function Dashboard() {
   }
   const ethLine = {
     title: {
-      text: 'Line chart'
+      text: 'Ethanol Chart'
     },
     xAxis: {
       categories: data.epoch
@@ -87,7 +87,7 @@ export default function Dashboard() {
   }
   const mq135Line = {
     title: {
-      text: 'Line chart'
+      text: 'MOX Chart'
     },
     xAxis: {
       categories: data.epoch
@@ -95,7 +95,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'MOX',
         data: data.mq135
       }
     ],
@@ -105,7 +105,7 @@ export default function Dashboard() {
   }
   const o3line = {
     title: {
-      text: 'Line chart'
+      text: 'O3 chart'
     },
     xAxis: {
       categories: data.epoch
@@ -113,7 +113,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'O3',
         data: data.o3
       }
     ],
@@ -123,7 +123,7 @@ export default function Dashboard() {
   }
   const tempLine = {
     title: {
-      text: 'Line chart'
+      text: 'Temperature chart'
     },
     xAxis: {
       categories: data.epoch
@@ -131,7 +131,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'Temperature',
         data: data.temp
       }
     ],
@@ -141,7 +141,7 @@ export default function Dashboard() {
   }
   const vocLine = {
     title: {
-      text: 'Line chart'
+      text: 'VOC chart'
     },
     xAxis: {
       categories: data.epoch
@@ -149,7 +149,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'VOC',
         data: data.voc
       }
     ],
@@ -159,7 +159,7 @@ export default function Dashboard() {
   }
   const h2Line = {
     title: {
-      text: 'Line chart'
+      text: 'H2 chart'
     },
     xAxis: {
       categories: data.epoch
@@ -167,7 +167,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'H2',
         data: data.h2
       }
     ],
@@ -177,7 +177,7 @@ export default function Dashboard() {
   }
   const humLine = {
     title: {
-      text: 'Line chart'
+      text: 'Humidity chart'
     },
     xAxis: {
       categories: data.epoch
@@ -185,7 +185,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'Humidity',
         data: data.hum
       }
     ],
@@ -200,7 +200,7 @@ export default function Dashboard() {
       </div>
 
       <div className="section col-md-6">
-        <h3 className="section-title">Co2 Chart</h3>
+        <h3 className="section-title"></h3>
         <div className="section-content">
           <HighchartsReact
             highcharts={Highcharts}
@@ -209,7 +209,7 @@ export default function Dashboard() {
       </div>
 
       <div className="section col-md-6">
-        <h3 className="section-title">Dust Chart</h3>
+        <h3 className="section-title"></h3>
         <div className="section-content">
           <HighchartsReact
             highcharts={Highcharts}
@@ -223,7 +223,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Ethanol Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -232,7 +232,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">H2 Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -247,7 +247,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Humidity Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -257,7 +257,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">MQ-135 Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -273,7 +273,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">O3 Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -283,7 +283,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Temperature Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -299,7 +299,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">VOC Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
