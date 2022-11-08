@@ -51,7 +51,7 @@ export default function Dashboard() {
   }
   const dustLine = {
     title: {
-      text: 'Line chart'
+      text: 'Dust'
     },
     xAxis: {
       categories: data.epoch
@@ -69,7 +69,7 @@ export default function Dashboard() {
   }
   const ethLine = {
     title: {
-      text: 'Line chart'
+      text: 'Ethanol'
     },
     xAxis: {
       categories: data.epoch
@@ -87,7 +87,7 @@ export default function Dashboard() {
   }
   const mq135Line = {
     title: {
-      text: 'Line chart'
+      text: 'mq135'
     },
     xAxis: {
       categories: data.epoch
@@ -105,7 +105,7 @@ export default function Dashboard() {
   }
   const o3line = {
     title: {
-      text: 'Line chart'
+      text: '03'
     },
     xAxis: {
       categories: data.epoch
@@ -113,7 +113,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: '03',
         data: data.o3
       }
     ],
@@ -123,7 +123,7 @@ export default function Dashboard() {
   }
   const tempLine = {
     title: {
-      text: 'Line chart'
+      text: 'Temperature'
     },
     xAxis: {
       categories: data.epoch
@@ -131,7 +131,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'temp',
         data: data.temp
       }
     ],
@@ -141,7 +141,7 @@ export default function Dashboard() {
   }
   const vocLine = {
     title: {
-      text: 'Line chart'
+      text: 'VOC'
     },
     xAxis: {
       categories: data.epoch
@@ -149,7 +149,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'voc',
         data: data.voc
       }
     ],
@@ -159,7 +159,7 @@ export default function Dashboard() {
   }
   const h2Line = {
     title: {
-      text: 'Line chart'
+      text: 'h2'
     },
     xAxis: {
       categories: data.epoch
@@ -167,7 +167,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'h2',
         data: data.h2
       }
     ],
@@ -177,7 +177,7 @@ export default function Dashboard() {
   }
   const humLine = {
     title: {
-      text: 'Line chart'
+      text: 'Humidity'
     },
     xAxis: {
       categories: data.epoch
@@ -185,7 +185,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'hum',
         data: data.hum
       }
     ],
