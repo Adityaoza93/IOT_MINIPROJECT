@@ -7,7 +7,7 @@ function Navbar12() {
     <>
       <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href="./">IoT</Navbar.Brand>
+          <Navbar.Brand href="./">IoT Gases</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="./">Dashboard</Nav.Link>
             <Nav.Link href="./Location">Location</Nav.Link>

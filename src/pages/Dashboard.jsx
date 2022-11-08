@@ -33,7 +33,7 @@ export default function Dashboard() {
 
   const co2Line = {
     title: {
-      text: 'Line chart'
+      text: 'CO2 Chart'
     },
     xAxis: {
       categories: data.epoch
@@ -51,7 +51,7 @@ export default function Dashboard() {
   }
   const dustLine = {
     title: {
-      text: 'Dust'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -69,7 +69,7 @@ export default function Dashboard() {
   }
   const ethLine = {
     title: {
-      text: 'eth'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -87,7 +87,7 @@ export default function Dashboard() {
   }
   const mq135Line = {
     title: {
-      text: 'mq135'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -95,7 +95,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'mq135',
+        name: 'Sales',
         data: data.mq135
       }
     ],
@@ -105,7 +105,7 @@ export default function Dashboard() {
   }
   const o3line = {
     title: {
-      text: '03'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -113,7 +113,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: '03',
+        name: 'Sales',
         data: data.o3
       }
     ],
@@ -123,7 +123,7 @@ export default function Dashboard() {
   }
   const tempLine = {
     title: {
-      text: 'temp'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -131,7 +131,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'temp',
+        name: 'Sales',
         data: data.temp
       }
     ],
@@ -141,7 +141,7 @@ export default function Dashboard() {
   }
   const vocLine = {
     title: {
-      text: 'VOC'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -149,7 +149,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'VOC',
+        name: 'Sales',
         data: data.voc
       }
     ],
@@ -159,7 +159,7 @@ export default function Dashboard() {
   }
   const h2Line = {
     title: {
-      text: 'H2'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -167,7 +167,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'H2',
+        name: 'Sales',
         data: data.h2
       }
     ],
@@ -177,7 +177,7 @@ export default function Dashboard() {
   }
   const humLine = {
     title: {
-      text: 'Humidity'
+      text: 'Line chart'
     },
     xAxis: {
       categories: data.epoch
@@ -185,7 +185,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'hum',
+        name: 'Sales',
         data: data.hum
       }
     ],
@@ -196,11 +196,12 @@ export default function Dashboard() {
   return (
     <><div className="row">
       <div className="col-md-12">
-        <h2>Dashboard</h2>
+        <h4 style={{textAlign: "center"}}>Dynamic Graphs</h4>
+        
       </div>
 
       <div className="section col-md-6">
-        <h3 className="section-title">Co2 Chart</h3>
+        <h3 className="section-title"></h3>
         <div className="section-content">
           <HighchartsReact
             highcharts={Highcharts}
@@ -209,7 +210,7 @@ export default function Dashboard() {
       </div>
 
       <div className="section col-md-6">
-        <h3 className="section-title">Dust Chart</h3>
+        <h3 className="section-title"></h3>
         <div className="section-content">
           <HighchartsReact
             highcharts={Highcharts}
@@ -223,7 +224,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Ethanol Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -232,7 +233,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">H2 Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -247,7 +248,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Humidity Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -257,7 +258,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">MQ-135 Chart</h3>
+          <h3 className="section-title"></h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -273,7 +274,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">O3 Chart</h3>
+          <h3 className="section-title">&nbsp;</h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -283,7 +284,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">Temperature Chart</h3>
+          <h3 className="section-title">&nbsp;</h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
@@ -299,7 +300,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section col-md-6">
-          <h3 className="section-title">VOC Chart</h3>
+          <h3 className="section-title">&nbsp;</h3>
           <div className="section-content">
             <HighchartsReact
               highcharts={Highcharts}
