@@ -95,7 +95,7 @@ export default function Dashboard() {
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Sales',
+        name: 'Ammonia, Sulphur, Carbon dioxide, Benzene',
         data: data.mq135
       }
     ],
