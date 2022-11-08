@@ -1,113 +1,48 @@
 import React, { useState, useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import fireDb from "../firebase"
+import axios from "axios"
+
+const baseUrl = "https://us-central1-arduinogasproject.cloudfunctions.net/app/getData";
 
 export default function Dashboard() {
 
-  // const [data, setData] = useState({});
-  // const [dataArr, setDataArr] = useState([]);
-  const [co2arr, setco2arr] = useState([]);
-  const [dustarr, setdustarr] = useState([]);
-  const [epocharr, setepocharr] = useState([]);
-  const [etharr, setetharr] = useState([]);
-  const [h2arr, seth2arr] = useState([]);
-  const [humarr, sethumarr] = useState([]);
-  const [latarr, setlatarr] = useState("");
-  const [lonarr, setlonarr] = useState("");
-  const [mq135arr, setmq135arr] = useState([]);
-  const [o3arr, seto3arr] = useState([]);
-  const [temparr, settemparr] = useState([]);
-  const [vocarr, setvocarr] = useState([]);
-  const [newdt, setnewdt] = useState([]);
+  const [data, setData] = useState({
+    co2:[],
+    dust:[],
+    epoch:[],
+    eth:[],
+    h2:[],
+    hum:[],
+    lat:[],
+    lon:[],
+    mq135:[],
+    o3:[],
+    temp:[],
+    voc:[]
+  });
+  
+  const getData = async () => {
+    await axios.get(baseUrl)
+      .then((response) => {
+        setData(response.data);
+      })
+  }
 
-
-  useEffect(() => {
-    fireDb.child("Todo").on("value", (snapshot) => {
-      const Tododata = snapshot.val();
-      if (Tododata !== null){
-        // setData({...Tododata})
-        // console.log(Tododata)
-        Object.entries(Tododata).forEach(element => {
-          setco2arr(co2arr => [...co2arr, element[1].co2])
-          setdustarr(dustarr => [...dustarr, element[1].dust])
-          setepocharr(epocharr => [...epocharr, element[1].epoch])
-          setetharr(etharr => [...etharr, element[1].eth])
-          seth2arr(h2arr => [...h2arr, element[1].h2])
-          sethumarr(humarr => [...humarr, element[1].hum])
-          // setlatarr(latarr)
-          // setlonarr(lonarr)
-          setmq135arr(mq135arr => [...mq135arr, element[1].mq135])
-          seto3arr(o3arr => [...o3arr, element[1].o3])
-          settemparr(temparr => [...temparr, element[1].temp])
-          setvocarr(vocarr => [...vocarr, element[1].voc])
-        })
-        // for(var lisobj of Object.entries(Tododata))
-        // {
-        //   // console.log(lisobj[1].eth)
-        //   setco2arr(co2arr => [...co2arr, lisobj[1].co2])
-        //   setdustarr(dustarr => [...dustarr, lisobj[1].dust])
-        //   setepocharr(epocharr => [...epocharr, lisobj[1].epoch])
-        //   setetharr(etharr => [...etharr, lisobj[1].eth])
-        //   seth2arr(h2arr => [...h2arr, lisobj[1].h2])
-        //   sethumarr(humarr => [...humarr, lisobj[1].hum])
-        //   setlatarr(latarr => [...latarr, lisobj[1].lat])
-        //   setlonarr(lonarr => [...lonarr, lisobj[1].lon])
-        //   setmq135arr(mq135arr => [...mq135arr, lisobj[1].mq135])
-        //   seto3arr(o3arr => [...o3arr, lisobj[1].o3])
-        //   settemparr(temparr => [...temparr, lisobj[1].temp])
-        //   setvocarr(vocarr => [...vocarr, lisobj[1].voc])
-        // }
-        epocharr.map(Number)
-        epocharr.forEach((element) => {
-          var date = new Date((element + 19800) * 1000)
-          var Hours = date.getHours();
-          var Minutes = "0" + date.getMinutes();
-          var Seconds = "0" + date.getSeconds()
-          var formattedDT = date + "-" + Hours + ":" + Minutes.substr(-2) + ":" + Seconds.substr(-2);
-          setnewdt(newdt => [...newdt, formattedDT])
-        })
-        console.log(newdt)
-        newdt.map(String)
-        setepocharr([])
-        setepocharr(newdt)
-      }else
-      {
-            // setData({})
-            // setco2arr([])
-            // setdustarr([])
-            // setepocharr([])
-            // setetharr([])
-            // seth2arr([])
-            // sethumarr([])
-            // setlatarr("")
-            // setlonarr("")
-            // setmq135arr([])
-            // seto3arr([])
-            // settemparr([])
-            // setvocarr([])
-            console.log("Error Encountered!")
-      }
-    });
-
-    return () => {
-      // setData({});
-    }
-
-  }, []);
+  useEffect(() => getData(), []);
 
   const co2Line = {
     title: {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
-        name: 'Co2',
-        data: co2arr.map(Number)
+        name: 'CO2',
+        data: data.co2
       }
     ],
     credits: {
@@ -119,13 +54,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Dust',
-        data: dustarr.map(Number)
+        data: data.dust
       }
     ],
     credits: {
@@ -137,13 +72,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833', '#17A8F5'],
     series: [
       {
         name: 'Ethanol',
-        data: etharr.map(Number)
+        data: data.eth
       }
     ],
     credits: {
@@ -155,13 +90,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: mq135arr.map(Number)
+        data: data.mq135
       }
     ],
     credits: {
@@ -173,13 +108,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: o3arr.map(Number)
+        data: data.o3
       }
     ],
     credits: {
@@ -191,13 +126,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: temparr.map(Number)
+        data: data.temp
       }
     ],
     credits: {
@@ -209,13 +144,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: vocarr.map(Number)
+        data: data.voc
       }
     ],
     credits: {
@@ -227,13 +162,13 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
     colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: h2arr.map(Number)
+        data: data.h2
       }
     ],
     credits: {
@@ -245,20 +180,19 @@ export default function Dashboard() {
       text: 'Line chart'
     },
     xAxis: {
-      categories: epocharr
+      categories: data.epoch
     },
-    colors: ['#FB8833'  ],
+    colors: ['#FB8833'],
     series: [
       {
         name: 'Sales',
-        data: humarr.map(Number)
+        data: data.hum
       }
     ],
     credits: {
       enabled: false
     }
   }
-  
   return (
     <><div className="row">
       <div className="col-md-12">
@@ -285,7 +219,7 @@ export default function Dashboard() {
 
     </div><div className="row">
         <div className="col-md-12">
-          
+
         </div>
 
         <div className="section col-md-6">
@@ -308,72 +242,72 @@ export default function Dashboard() {
 
       </div>
       <div className="row">
-      <div className="col-md-12">
-        
-      </div>
-      
-      <div className="section col-md-6">
-        <h3 className="section-title">Humidity Chart</h3>
-        <div className="section-content">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={humLine}
-          />
-        </div>
-      </div>
+        <div className="col-md-12">
 
-      <div className="section col-md-6">
-        <h3 className="section-title">MQ-135 Chart</h3>
-        <div className="section-content">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={mq135Line}
-          />
         </div>
-      </div>
 
-    </div>
-    <div className="row">
-      <div className="col-md-12">
-        
-      </div>
-      
-      <div className="section col-md-6">
-        <h3 className="section-title">O3 Chart</h3>
-        <div className="section-content">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={o3line}
-          />
+        <div className="section col-md-6">
+          <h3 className="section-title">Humidity Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={humLine}
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="section col-md-6">
-        <h3 className="section-title">Temperature Chart</h3>
-        <div className="section-content">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={tempLine}
-          />
+        <div className="section col-md-6">
+          <h3 className="section-title">MQ-135 Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={mq135Line}
+            />
+          </div>
         </div>
-      </div>
 
-    </div>
-    <div className="row">
-      <div className="col-md-12">
-        
       </div>
-      
-      <div className="section col-md-6">
-        <h3 className="section-title">VOC Chart</h3>
-        <div className="section-content">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={vocLine}
-          />
+      <div className="row">
+        <div className="col-md-12">
+
+        </div>
+
+        <div className="section col-md-6">
+          <h3 className="section-title">O3 Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={o3line}
+            />
+          </div>
+        </div>
+
+        <div className="section col-md-6">
+          <h3 className="section-title">Temperature Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={tempLine}
+            />
+          </div>
+        </div>
+
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+
+        </div>
+
+        <div className="section col-md-6">
+          <h3 className="section-title">VOC Chart</h3>
+          <div className="section-content">
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={vocLine}
+            />
+          </div>
         </div>
       </div>
-      </div>
-      </>
+    </>
   )
-}
+  }
