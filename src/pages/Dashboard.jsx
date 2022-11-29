@@ -42,7 +42,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'CO2',
-        data: data.co2
+        data: data.co2.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -60,7 +60,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'Dust',
-        data: data.dust
+        data: data.dust.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -78,7 +78,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'Ethanol',
-        data: data.eth
+        data: data.eth.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -96,7 +96,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'Ammonia, Sulphur, Carbon dioxide, Benzene',
-        data: data.mq135
+        data: data.mq135.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -114,7 +114,7 @@ export default function Dashboard() {
     series: [
       {
         name: '03',
-        data: data.o3
+        data: data.o3.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -132,7 +132,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'temp',
-        data: data.temp
+        data: data.temp.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -150,7 +150,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'voc',
-        data: data.voc
+        data: data.voc.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -168,7 +168,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'h2',
-        data: data.h2
+        data: data.h2.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
@@ -186,7 +186,7 @@ export default function Dashboard() {
     series: [
       {
         name: 'hum',
-        data: data.hum
+        data: data.hum.slice(Math.max(arr.length - 20, 0))
       }
     ],
     credits: {
