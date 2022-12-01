@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+    background-color: #ffffff00;
+}
+
+.topDiv {
+    width: 100%;
+    height: 51.938rem;
+    background-image: url("../assets/bgart.svg");
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 6.25rem;
+}
+
+.jumbotron {
+
+    padding: 4.625rem 1.563rem;
+}
