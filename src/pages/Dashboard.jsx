@@ -31,10 +31,6 @@ export default function Dashboard() {
   useEffect(() => getData(), []);
 
   const co2Line = {
-    chart: {
-      backgroundColor: "#ffffff",
-      type: "line",
-    },
     title: {
       text: "CO2 Chart",
     },
