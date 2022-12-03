@@ -3,8 +3,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
 
-const baseUrl =
-  "https://us-central1-arduinogasproject.cloudfunctions.net/app/getData";
+const baseUrl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.API_KEY}/getData`;
 
 export default function Dashboard() {
   const [data, setData] = useState({
