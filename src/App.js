@@ -6,6 +6,7 @@ import Location from "./pages/Location";
 import Navbar12 from "./components/Navbar12";
 import Landing from "./pages/Landing";
 
+
 const baseUrl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.API_KEY}/getData`;
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/Location" element={<Location />} />
           <Route path="/Dashboard" element={<Dashboard baseUrl={baseUrl} />} />
+
         </Routes>
 
       </Router>

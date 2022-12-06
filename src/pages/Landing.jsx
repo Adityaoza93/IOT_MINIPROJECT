@@ -28,7 +28,6 @@ export default function Landing() {
           />
         </LocalizationProvider>
       </div>
-      div
     </div>
   );
 }
