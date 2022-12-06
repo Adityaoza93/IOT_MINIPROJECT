@@ -8,8 +8,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
 export default function Landing() {
-  const [value, setValue] = React.useState(dayjs("2022-04-07"));
-
+  const [value, setValue] = useState(dayjs("2022-04-07"));
+  console.log(value);
+  console.log(new Date(value).valueOf() / 1000);
   return (
     <div className="jumbotron topDiv text-center">
       <h1>
@@ -23,7 +24,8 @@ export default function Landing() {
             value={value}
             onChange={(newValue) => {
               setValue(newValue);
-              console.log(value);
+              // console.log(value);
+              // console.log(new Date(value).valueOf() / 1000);
             }}
           />
         </LocalizationProvider>

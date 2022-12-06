@@ -3,9 +3,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
 
-const baseUrl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.API_KEY}/getData`;
-
-export default function Dashboard() {
+export default function Dashboard(props) {
+  const baseUrl = props.baseUrl;
   const [data, setData] = useState({
     co2: [],
     dust: [],
