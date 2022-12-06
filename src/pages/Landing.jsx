@@ -24,12 +24,11 @@ export default function Landing() {
             value={value}
             onChange={(newValue) => {
               setValue(newValue);
-              // console.log(value);
-              // console.log(new Date(value).valueOf() / 1000);
             }}
           />
         </LocalizationProvider>
       </div>
+      div
     </div>
   );
 }
