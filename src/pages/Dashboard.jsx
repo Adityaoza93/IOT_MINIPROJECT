@@ -28,7 +28,7 @@ export default function Dashboard() {
   };
 
   useEffect(() => getData(), []);
-  console.log(data);
+
   const co2Line = {
     title: {
       text: "CO2 Chart",
