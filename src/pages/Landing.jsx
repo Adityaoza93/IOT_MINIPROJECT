@@ -8,7 +8,6 @@ import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import SpecDashboard from "./SpecDashboard";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
@@ -21,7 +20,6 @@ export default function Landing() {
     // console.log(event.target.value);
   };
   // console.log(AdjustmentTime);
-  const specurl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.API_KEY}/getData/${unixdate}/adjustTime/${AdjustmentTime}`;
 
   return (
     <div className="jumbotron topDiv text-center">

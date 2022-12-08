@@ -7,7 +7,7 @@ import Navbar12 from "./components/Navbar12";
 import Landing from "./pages/Landing";
 import SpecDashboard from "./pages/SpecDashboard"
 
-const baseUrl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.API_KEY}/getData`;
+const baseUrl = `https://us-central1-arduinogasproject.cloudfunctions.net/app/api/${process.env.REACT_APP_API_KEY}/getData`;
 
 function App() {
   return (
