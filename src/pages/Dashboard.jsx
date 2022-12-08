@@ -243,7 +243,10 @@ export default function Dashboard(props) {
       className="container-fluid maincont"
     >
       <div className="row">
-        <div className="col-md-12 AdjustText">
+        <div className="col-md-12">
+          <h4 style={{ textAlign: "center" }}></h4>
+        </div>
+        <div className="section col-md-12">
           <div className="pointbox">
             <TextField
               id="outlined-basic"
@@ -254,12 +257,6 @@ export default function Dashboard(props) {
             />
           </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12">
-          <h4 style={{ textAlign: "center" }}></h4>
-        </div>
-
         <div className="section col-md-6">
           <h3 className="section-title"></h3>
           <div className="section-content">
