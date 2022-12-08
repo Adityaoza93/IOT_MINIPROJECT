@@ -39,13 +39,25 @@ export default function Dashboard(props) {
   useEffect(() => getData(), []);
 
   const co2Line = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "CO2 Chart",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -61,13 +73,25 @@ export default function Dashboard(props) {
     },
   };
   const dustLine = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "PM2.5",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -83,15 +107,27 @@ export default function Dashboard(props) {
     },
   };
   const ethLine = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "Ethanol",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
-    colors: ["#FB8833", "#17A8F5"],
+    colors: ["#FB8833"],
     series: [
       {
         name: "Ethanol",
@@ -105,13 +141,25 @@ export default function Dashboard(props) {
     },
   };
   const mq135Line = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "Ammonia, Sulphur, Carbon dioxide, Benzene",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -127,13 +175,25 @@ export default function Dashboard(props) {
     },
   };
   const o3line = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "O3",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -149,13 +209,25 @@ export default function Dashboard(props) {
     },
   };
   const tempLine = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "Temperature",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -171,13 +243,25 @@ export default function Dashboard(props) {
     },
   };
   const vocLine = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "VOC",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -193,13 +277,25 @@ export default function Dashboard(props) {
     },
   };
   const h2Line = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
-      text: "h2",
+      text: "H2",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -215,13 +311,25 @@ export default function Dashboard(props) {
     },
   };
   const humLine = {
+    chart: {
+      backgroundColor: "#ffffff00",
+      type: "line",
+    },
     title: {
       text: "Humidity",
+      style: {
+        color: "#004CBB",
+      },
     },
     xAxis: {
       categories: data.epoch.slice(
         Math.max(data.epoch.length - Number(AdjustmentTime), 0)
       ),
+      labels: {
+        style: {
+          color: "#004CBB",
+        },
+      },
     },
     colors: ["#FB8833"],
     series: [
@@ -239,7 +347,7 @@ export default function Dashboard(props) {
 
   return (
     <div
-      style={{ backgroundColor: "#ffffff" }}
+      style={{ backgroundColor: "#6198FF" }}
       className="container-fluid maincont"
     >
       <div className="row">
