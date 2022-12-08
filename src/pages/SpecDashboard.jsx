@@ -36,13 +36,13 @@ export default function Dashboard() {
       text: "CO2 Chart",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "CO2",
-        data: data.co2.slice(Math.max(data.co2.length - 20, 0)),
+        data: data.co2,
       },
     ],
     credits: {
@@ -54,13 +54,13 @@ export default function Dashboard() {
       text: "PM2.5",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "PM2.5",
-        data: data.dust.slice(Math.max(data.dust.length - 20, 0)),
+        data: data.dust,
       },
     ],
     credits: {
@@ -72,13 +72,13 @@ export default function Dashboard() {
       text: "Ethanol",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833", "#17A8F5"],
     series: [
       {
         name: "Ethanol",
-        data: data.eth.slice(Math.max(data.eth.length - 20, 0)),
+        data: data.eth,
       },
     ],
     credits: {
@@ -90,13 +90,13 @@ export default function Dashboard() {
       text: "Ammonia, Sulphur, Carbon dioxide, Benzene",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "Ammonia, Sulphur, Carbon dioxide, Benzene",
-        data: data.mq135.slice(Math.max(data.mq135.length - 20, 0)),
+        data: data.mq135,
       },
     ],
     credits: {
@@ -108,13 +108,13 @@ export default function Dashboard() {
       text: "O3",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "O3",
-        data: data.o3.slice(Math.max(data.o3.length - 20, 0)),
+        data: data.o3,
       },
     ],
     credits: {
@@ -126,13 +126,13 @@ export default function Dashboard() {
       text: "Temperature",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "temp",
-        data: data.temp.slice(Math.max(data.temp.length - 20, 0)),
+        data: data.temp,
       },
     ],
     credits: {
@@ -144,13 +144,13 @@ export default function Dashboard() {
       text: "VOC",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "voc",
-        data: data.voc.slice(Math.max(data.voc.length - 20, 0)),
+        data: data.voc,
       },
     ],
     credits: {
@@ -162,13 +162,13 @@ export default function Dashboard() {
       text: "h2",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "h2",
-        data: data.h2.slice(Math.max(data.h2.length - 20, 0)),
+        data: data.h2,
       },
     ],
     credits: {
@@ -180,13 +180,13 @@ export default function Dashboard() {
       text: "Humidity",
     },
     xAxis: {
-      categories: data.epoch.slice(Math.max(data.epoch.length - 20, 0)),
+      categories: data.epoch,
     },
     colors: ["#FB8833"],
     series: [
       {
         name: "hum",
-        data: data.hum.slice(Math.max(data.hum.length - 20, 0)),
+        data: data.hum,
       },
     ],
     credits: {
