@@ -2,8 +2,35 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/iotlogo.png";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function Navbar12() {
+function Navbar12(props) {
+  const baseUrl = props.baseUrl;
+
+  const [data, setData] = useState({
+    co2: [],
+    dust: [],
+    epoch: [],
+    eth: [],
+    h2: [],
+    hum: [],
+    lat: [],
+    lon: [],
+    mq135: [],
+    o3: [],
+    temp: [],
+    voc: [],
+  });
+
+  const getData = async () => {
+    await axios.get(baseUrl).then((response) => {
+      setData(response.data);
+    });
+  };
+
+  useEffect(() => getData(), []);
+
   return (
     <>
       <Navbar style={{ backgroundColor: "#6198FF" }} variant="dark">
@@ -15,6 +42,9 @@ function Navbar12() {
             <Nav.Link href="./Dashboard">Dashboard</Nav.Link>
             <Nav.Link href="./Location">Location</Nav.Link>
           </Nav>
+          <Navbar.Text>
+            Location - Longitude: {data.lon} & Latitude: {data.lat}
+          </Navbar.Text>
         </Container>
       </Navbar>
     </>

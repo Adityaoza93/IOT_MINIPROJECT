@@ -14,7 +14,7 @@ function App() {
     <>
 
       <Router>
-        <Navbar12 />
+        <Navbar12 baseUrl={baseUrl} />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/Location" element={<Location />} />
