@@ -11,7 +11,7 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
-  const [value, setValue] = useState(dayjs("2022-04-07"));
+  const [value, setValue] = useState(dayjs("2022-12-02"));
   // console.log(value);
   let unixdate = String(new Date(value).valueOf() / 1000);
   const [AdjustmentTime, setAdjustmentTime] = useState(String(5));
