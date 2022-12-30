@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import "./ReportPrint.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -14,20 +14,7 @@ import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 
 export default function ReportPrint() {
   const componentRef = useRef();
-  const [data, setData] = useState({
-    co2: [],
-    dust: [],
-    epoch: [],
-    eth: [],
-    h2: [],
-    hum: [],
-    lat: [],
-    lon: [],
-    mq135: [],
-    o3: [],
-    temp: [],
-    voc: [],
-  });
+  const [data, setData] = useState([]);
   const [value, setValue] = useState(dayjs("2022-12-02"));
   const [toTime, settoTime] = useState(dayjs("2022-12-02"));
   const [findbutton, setfindbutton] = useState(false);
@@ -132,6 +119,26 @@ export default function ReportPrint() {
                 <th scope="col">VOC</th>
               </tr>
             </thead>
+            <tbody>
+              {data.map((element) => {
+                return (
+                  <tr key={element.epoch}>
+                    <td>{element.epoch}</td>
+                    <td>{element.co2}</td>
+                    <td>{element.dust}</td>
+                    <td>{element.h2}</td>
+                    <td>{element.eth}</td>
+                    <td>{element.hum}</td>
+                    <td>{element.lat}</td>
+                    <td>{element.lon}</td>
+                    <td>{element.mq135}</td>
+                    <td>{element.o3}</td>
+                    <td>{element.temp}</td>
+                    <td>{element.voc}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
