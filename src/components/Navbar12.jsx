@@ -41,6 +41,7 @@ function Navbar12(props) {
           <Nav className="me-auto">
             <Nav.Link href="./Dashboard">Dashboard</Nav.Link>
             <Nav.Link href="./Location">Location</Nav.Link>
+            <Nav.Link href="./ReportPrint">Generate Report</Nav.Link>
           </Nav>
           <Navbar.Text>
             Location - Longitude: {data.lon} & Latitude: {data.lat}

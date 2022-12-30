@@ -35,6 +35,7 @@
     "react-map-gl": "^7.0.19",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-to-print": "^2.14.10",
     "sass": "^1.56.1",
     "web-vitals": "^2.1.4"
   },
