@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/iotlogo.png";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Navbar12.css";
 
 function Navbar12(props) {
   const baseUrl = props.baseUrl;
