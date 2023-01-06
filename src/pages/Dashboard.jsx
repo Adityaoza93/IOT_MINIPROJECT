@@ -6,8 +6,14 @@ import TextField from "@mui/material/TextField";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dashboard.css";
 import Select from "react-select";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default function Dashboard(props) {
+  const [selectedOptions, setSelectedOptions] = useState([]);
   const baseUrl = props.baseUrl;
   const [data, setData] = useState({
     co2: [],
@@ -45,7 +51,7 @@ export default function Dashboard(props) {
       type: "line",
     },
     title: {
-      text: "CO2 Chart",
+      text: "eCO2 Chart",
       style: {
         color: "#004CBB",
       },
@@ -63,7 +69,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "CO2",
+        name: "eCO2",
         data: data.co2.slice(
           Math.max(data.co2.length - Number(AdjustmentTime), 0)
         ),
@@ -113,7 +119,7 @@ export default function Dashboard(props) {
       type: "line",
     },
     title: {
-      text: "Ethanol",
+      text: "Raw Ethanol",
       style: {
         color: "#004CBB",
       },
@@ -131,7 +137,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "Ethanol",
+        name: "Raw Ethanol",
         data: data.eth.slice(
           Math.max(data.eth.length - Number(AdjustmentTime), 0)
         ),
@@ -233,7 +239,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "temp",
+        name: "Temperature",
         data: data.temp.slice(
           Math.max(data.temp.length - Number(AdjustmentTime), 0)
         ),
@@ -249,7 +255,7 @@ export default function Dashboard(props) {
       type: "line",
     },
     title: {
-      text: "VOC",
+      text: "TVOC",
       style: {
         color: "#004CBB",
       },
@@ -267,7 +273,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "voc",
+        name: "TVOC",
         data: data.voc.slice(
           Math.max(data.voc.length - Number(AdjustmentTime), 0)
         ),
@@ -283,7 +289,7 @@ export default function Dashboard(props) {
       type: "line",
     },
     title: {
-      text: "H2",
+      text: "Raw H2",
       style: {
         color: "#004CBB",
       },
@@ -301,7 +307,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "h2",
+        name: "Raw H2",
         data: data.h2.slice(
           Math.max(data.h2.length - Number(AdjustmentTime), 0)
         ),
@@ -335,7 +341,7 @@ export default function Dashboard(props) {
     colors: ["#FB8833"],
     series: [
       {
-        name: "hum",
+        name: "Humidity",
         data: data.hum.slice(
           Math.max(data.hum.length - Number(AdjustmentTime), 0)
         ),
@@ -357,18 +363,17 @@ export default function Dashboard(props) {
     { value: tempLine, label: "Temperature" },
     { value: vocLine, label: "TVOC" },
   ];
-  const [selectedOptions, setSelectedOptions] = useState([]);
+
   function handleSelect(data) {
     setSelectedOptions(data);
   }
-  console.log(selectedOptions);
+
   return (
-    <div
-      style={{ backgroundColor: "#6198FF" }}
-      className="container-fluid maincont"
-    >
-      <div className="row">
-        <div className="col-md-12">
+    <>
+      <Container>
+        <Row>
+          <Col>
+          <div className="my-4">
           <Select
             options={optionList}
             placeholder="Select graph"
@@ -377,19 +382,24 @@ export default function Dashboard(props) {
             isSearchable={true}
             isMulti
           />
-        </div>
-        <div className="col-md-12 AdjustText">
-          <div className="pointbox">
-            <TextField
-              id="outlined-basic"
-              label="Enter Number of points to plot"
-              variant="outlined"
-              value={AdjustmentTime}
-              onChange={handleTextChange}
-            />
           </div>
-        </div>
-      </div>
+          </Col>
+          <Col>
+              <div className="my-3">
+              <div className="pointbox">
+              <TextField
+                  id="outlined-basic"
+                  label="Enter Number of points to plot"
+                  variant="outlined"
+                  value={AdjustmentTime}
+                  onChange={handleTextChange}
+               />
+              </div>
+              </div>
+          
+          </Col>
+        </Row>
+      </Container>
       <div className="d-flex flex-wrap">
         {selectedOptions.map((element) => {
           return (
@@ -402,6 +412,6 @@ export default function Dashboard(props) {
           );
         })}
       </div>
-    </div>
+      </>
   );
 }
