@@ -5,9 +5,10 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dashboard.css";
+import Select from "react-select";
+
 export default function Dashboard(props) {
   const baseUrl = props.baseUrl;
-
   const [data, setData] = useState({
     co2: [],
     dust: [],
@@ -345,12 +346,38 @@ export default function Dashboard(props) {
     },
   };
 
+  const optionList = [
+    { value: co2Line, label: "eCO2" },
+    { value: dustLine, label: "PM 2.5" },
+    { value: ethLine, label: "Raw Ethanol" },
+    { value: h2Line, label: "Raw H2" },
+    { value: humLine, label: "Humidity" },
+    { value: mq135Line, label: "Benzene, Ammonia Composite" },
+    { value: o3line, label: "O3" },
+    { value: tempLine, label: "Temperature" },
+    { value: vocLine, label: "TVOC" },
+  ];
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  function handleSelect(data) {
+    setSelectedOptions(data);
+  }
+  console.log(selectedOptions);
   return (
     <div
       style={{ backgroundColor: "#6198FF" }}
       className="container-fluid maincont"
     >
       <div className="row">
+        <div className="col-md-12">
+          <Select
+            options={optionList}
+            placeholder="Select graph"
+            value={selectedOptions}
+            onChange={handleSelect}
+            isSearchable={true}
+            isMulti
+          />
+        </div>
         <div className="col-md-12 AdjustText">
           <div className="pointbox">
             <TextField
@@ -363,85 +390,17 @@ export default function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-12">
-          <h4 style={{ textAlign: "center" }}></h4>
-        </div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={co2Line} />
-          </div>
-        </div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={dustLine} />
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12"></div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={ethLine} />
-          </div>
-        </div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={h2Line} />
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12"></div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={humLine} />
-          </div>
-        </div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title"></h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={mq135Line} />
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12"></div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title">&nbsp;</h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={o3line} />
-          </div>
-        </div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title">&nbsp;</h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={tempLine} />
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12"></div>
-
-        <div className="section col-md-6">
-          <h3 className="section-title">&nbsp;</h3>
-          <div className="section-content">
-            <HighchartsReact highcharts={Highcharts} options={vocLine} />
-          </div>
-        </div>
+      <div className="d-flex flex-wrap">
+        {selectedOptions.map((element) => {
+          return (
+            <div className="p-2">
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={element.value}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
